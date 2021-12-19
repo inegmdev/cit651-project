@@ -15,6 +15,7 @@
 * [Simplifying Sentiment Analysis in Python - Tutorial - Datacamp](https://www.datacamp.com/community/tutorials/simplifying-sentiment-analysis-python)
 * [Sentiment Analysis in Python - Course - Datacamp](https://app.datacamp.com/learn/courses/sentiment-analysis-in-python)
 * [CAMeL Tools: An Open Source Python Toolkit for Arabic Natural Language Processing](https://aclanthology.org/2020.lrec-1.868/)
+* [Youtube - Financial News Headline Sentiment Analysis (NLP) - Data Every Day #176](https://www.youtube.com/watch?v=JrtXX4cHgBI)
 
 ## Datasets
 
