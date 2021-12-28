@@ -1,13 +1,15 @@
 # cit651-project
 
 ## Problem Definition
+[Toxic Comment Classification Challenge](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/rules)
 
-1. Effect of news on the stock in general
-2. Effect of news on a specific company share.
-3. Effect of news on a group of companies' stock.
+## Courses to ramp up
+_Suggested by Ahmed_
+1. https://www.kaggle.com/learn/intro-to-machine-learning
+2. https://www.kaggle.com/learn/intermediate-machine-learning
+3. https://www.kaggle.com/learn/natural-language-processing
 
-
-## Important Links
+## Other Important Links
 
 * [Guide - Sentiment Analysis in 2022: Benefits, Tools, and more!](https://brand24.com/blog/sentiment-analysis/)
 * [Natural Language Processing In 10 Minutes | NLP Tutorial For Beginners | NLP Training | Edureka](https://www.youtube.com/watch?v=5ctbvkAMQO4)
@@ -16,8 +18,4 @@
 * [Sentiment Analysis in Python - Course - Datacamp](https://app.datacamp.com/learn/courses/sentiment-analysis-in-python)
 * [CAMeL Tools: An Open Source Python Toolkit for Arabic Natural Language Processing](https://aclanthology.org/2020.lrec-1.868/)
 * [Youtube - Financial News Headline Sentiment Analysis (NLP) - Data Every Day #176](https://www.youtube.com/watch?v=JrtXX4cHgBI)
-
-## Datasets
-
-* [Stock Sentiment Analysis using News Headlines - Kaggle](https://www.kaggle.com/rohit0906/stock-sentiment-analysis-using-news-headlines/notebook)
 * [Toxic Comment Classification Challenge - Kaggle](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
