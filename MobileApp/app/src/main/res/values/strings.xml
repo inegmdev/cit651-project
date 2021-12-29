@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Watch Your Finger</string>
+    <string name="phrase">Hello, this is a test phrase. For now the prediction is not done </string>
+</resources>
