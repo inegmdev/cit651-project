@@ -19,13 +19,11 @@ def hello_world():
 
 @app.route('/predict/<phrase>')
 def predict_request(phrase):
-
-
     return predict(phrase)
 
 
 def predict(phrase):
-    rnd = randint(0, len(predictions)-1)
+    rnd = randint(0, len(predictions) - 1)
 
     response = {'phrase': phrase, 'prediction': predictions[rnd]}
     return response
