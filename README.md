@@ -19,3 +19,12 @@ _Suggested by Ahmed_
 * [CAMeL Tools: An Open Source Python Toolkit for Arabic Natural Language Processing](https://aclanthology.org/2020.lrec-1.868/)
 * [Youtube - Financial News Headline Sentiment Analysis (NLP) - Data Every Day #176](https://www.youtube.com/watch?v=JrtXX4cHgBI)
 * [Toxic Comment Classification Challenge - Kaggle](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
+
+## Important Issues we need to focus on:
+
+1. Pre-processing techniques of the data set 
+2. Choosing the Classification algorithm and justification of the choice. 
+3. The cross-validation method (which method? and what is the training/validation ratio)
+4. Calculating the accuracy of the model (which metric we will choose and why)
+5. Welcome to more issues ...
+
