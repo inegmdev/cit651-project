@@ -1,3 +1,7 @@
 
 FlaskServer/.idea/vcs.xml
 FlaskServer/.idea/vcs.xml
+
+*:Zone.Identifier
+
+.venv
