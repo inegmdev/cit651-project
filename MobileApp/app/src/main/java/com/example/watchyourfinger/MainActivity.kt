@@ -18,6 +18,7 @@ import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.watchyourfinger.model.PhrasePrediction
+import com.example.watchyourfinger.model.Prediction
 import com.example.watchyourfinger.ui.theme.WatchYourFingerTheme
 import com.example.watchyourfinger.ui.theme.drawerShape
 import kotlinx.coroutines.launch
@@ -109,9 +110,16 @@ class MainActivity : ComponentActivity() {
                                     val jsonObjectRequest =
                                         JsonObjectRequest(Request.Method.GET, newUrl, null,
                                             { r ->
+                                                val pObj=r.getJSONObject("predictions")
+                                                val pred = Prediction(pObj.getInt("toxic"),
+                                                    pObj.getInt("severe_toxic"),
+                                                    pObj.getInt("obscene"),
+                                                    pObj.getInt("threat"),
+                                                    pObj.getInt("insult"),
+                                                    pObj.getInt("identity_hate"))
                                                 val pp = PhrasePrediction(
                                                     r.getString("phrase"),
-                                                    r.getString("prediction")
+                                                    pred
                                                 )
                                                 response.value =
                                                     "Response: %s".format(pp.toString())
@@ -127,6 +135,7 @@ class MainActivity : ComponentActivity() {
 
 
                                     queue.add(jsonObjectRequest)
+                                    phrase =""
                                 },
                                 modifier = Modifier
                                     .padding(top = 8.dp)
@@ -136,7 +145,7 @@ class MainActivity : ComponentActivity() {
                             }
                         }
 
-                        LazyColumn() {
+                        LazyColumn(reverseLayout= true) {
                             items(predictionsList) { invoice ->
                                 PredictionCard(invoice)
                                 Spacer(modifier = Modifier.height(10.dp))
@@ -164,14 +173,14 @@ fun PredictionCard(prediction: PhrasePrediction) {
             verticalArrangement = Arrangement.Center,
 
         ) {
-            Row(
+            Column(
                 modifier = Modifier
-                    .fillMaxWidth(), verticalAlignment = Alignment.CenterVertically
+                    .fillMaxWidth()//,  = Alignment.CenterVertically
             ) {
 
                 Row(
                     modifier = Modifier
-                        .fillMaxWidth(0.9F)
+                        .fillMaxWidth()
                         .padding(10.dp),
 
                 ) {
@@ -186,12 +195,34 @@ fun PredictionCard(prediction: PhrasePrediction) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(4.dp),
-                    horizontalArrangement = Arrangement.spacedBy(0.dp, Alignment.End)
+                    horizontalArrangement = Arrangement.spacedBy(5.dp, Alignment.End)
                 ) {
+
                     RoundTag(
-                        color = getColor(prediction.prediction),
-                        shortText = getAbbrev(prediction.prediction)
+                        color =   if (prediction.predictions.toxic == 1) getColor("toxic") else getColor("") ,
+                        shortText = getAbbrev("toxic")
                     )
+                    RoundTag(
+                        color = if (prediction.predictions.severe_toxic == 1) getColor("severe_toxic") else getColor(""),
+                        shortText = getAbbrev("severe_toxic")
+                    )
+                    RoundTag(
+                        color = if (prediction.predictions.obscene == 1) getColor("obscene") else getColor(""),
+                        shortText = getAbbrev("obscene")
+                    )
+                    RoundTag(
+                        color =if (prediction.predictions.threat == 1) getColor("threat") else getColor(""),
+                        shortText = getAbbrev("threat")
+                    )
+                    RoundTag(
+                        color = if (prediction.predictions.insult == 1) getColor("insult") else getColor(""),
+                        shortText = getAbbrev("insult")
+                    )
+                    RoundTag(
+                        color = if (prediction.predictions.identity_hate == 1) getColor("identity_hate") else getColor(""),
+                        shortText = getAbbrev("identity_hate")
+                    )
+
                 }
 
             }

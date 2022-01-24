@@ -14,7 +14,7 @@ fun getColor(prediction: String): Color {
         "identity_hate" -> identity_hateColor
 
 
-        else -> Color.White
+        else -> nonToxicColor
     }
 }
 
